@@ -23,11 +23,7 @@ public class Demo {
 		WebDriverManager.chromedriver().setup();
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		
-//		Map<String, String> mobileEmulator = new HashMap<String, String>();
-//		mobileEmulator.put("deviceName", "iPhone XR");
-//		Map<String, Object> chromeOPtion = new HashMap<String, Object>();
-//		chromeOPtion.put("mobileEmulator", mobileEmulator);
+
 		//Open link
 		driver.get("https://www.liputan6.com/");
 		
@@ -67,8 +63,8 @@ public class Demo {
 		
 		//Select article
 		driver.findElement(By.cssSelector("#article_4859106 > aside > header > h4 > a")).click();
-		Thread.sleep(10000);
-//		
+		Thread.sleep(10000);	
+			
 		//Get element on new window
 		Set<String> windowHandles = driver.getWindowHandles();
 		System.out.println(windowHandles);
@@ -79,13 +75,11 @@ public class Demo {
 		Thread.sleep(2000);
 		
 		//Verify title of article
-//		String title_article = driver.findElement(By.cssSelector("#main > div.container-article > div > article > div.read-page-upper > header > h1")).getText();
-//		String expected_title = "Top 3: Penampakan Bendungan Terindah di Indonesia";
-//		org.junit.Assert.assertEquals(title_article, expected_title);
-		//System.out.println("Testing Success");
-		WebElement m=driver.findElement(By.xpath("//*[contains(text(),'Indonesia')]"));
-	      System.out.println("Element with contains(): " + m.getText());
-	    //*[@id="main"]/div[3]/div/article/div[1]/header/h1
+		String title_article = driver.findElement(By.cssSelector("#main > div.container-article > div > article > div.read-page-upper > header > h1")).getText();
+		String expected_title = "Top 3: Penampakan Bendungan Terindah di Indonesia";
+		org.junit.Assert.assertEquals(title_article, expected_title);
+		System.out.println("Testing Success");
+		
 		
 
 	}
